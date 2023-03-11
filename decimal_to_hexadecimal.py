@@ -19,7 +19,7 @@ def decimal_to_hex(number, remainder_list=None):
         elif remainder == 15:
             remainder_list.append("F")
         else:
-            remainder_list.append(remainder)
+            remainder_list.append(str(remainder))
 
         quotient = int(number/16)
         number = quotient
@@ -27,7 +27,7 @@ def decimal_to_hex(number, remainder_list=None):
         if quotient == 0:
             remainder_list.reverse()
             break
-    return remainder_list
+    return "".join(remainder_list)
 
 print(decimal_to_hex(255))
 print(decimal_to_hex(45891))
